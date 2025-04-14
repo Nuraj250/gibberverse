@@ -1,6 +1,6 @@
 Flask
 Flask-Cors
-TTS==0.22.0
 torch
 python-dotenv
 requests
+gTTS

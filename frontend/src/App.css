@@ -1,0 +1,16 @@
+.app-wrapper {
+  background: radial-gradient(circle at top, #ffe6e6, #e6f2ff);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+}
