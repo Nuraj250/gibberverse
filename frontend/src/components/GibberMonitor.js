@@ -18,12 +18,37 @@ export default function GibberMonitor() {
 
   return (
     <div>
-      <h2>Gibberlink Monitor</h2>
-      <input value={text} onChange={(e) => setText(e.target.value)} placeholder="Text to encode" />
-      <button onClick={handleEncode}>Encode</button>
-      <button onClick={handleDecode}>Decode</button>
-      <p>Encoded: {encoded}</p>
-      <p>Decoded: {decoded}</p>
+      <div className="mb-3">
+        <input
+          className="form-control"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Text to encode"
+        />
+      </div>
+
+      <div className="d-flex gap-2 mb-3">
+        <button className="btn btn-secondary" onClick={handleEncode}>
+          Encode
+        </button>
+        <button className="btn btn-secondary" onClick={handleDecode}>
+          Decode
+        </button>
+      </div>
+
+      {encoded && (
+        <div className="mb-2">
+          <strong>Encoded:</strong>
+          <div className="alert alert-dark mt-1">{encoded}</div>
+        </div>
+      )}
+
+      {decoded && (
+        <div>
+          <strong>Decoded:</strong>
+          <div className="alert alert-info mt-1">{decoded}</div>
+        </div>
+      )}
     </div>
   );
 }

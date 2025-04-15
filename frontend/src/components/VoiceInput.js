@@ -12,10 +12,24 @@ export default function VoiceInput() {
 
   return (
     <div>
-      <h2>Text-to-Speech</h2>
-      <input value={text} onChange={(e) => setText(e.target.value)} />
-      <button onClick={handleSpeak}>Speak</button>
-      {audioUrl && <audio controls src={audioUrl} />}
+      <div className="mb-3">
+        <input
+          className="form-control"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Enter text to convert to speech"
+        />
+      </div>
+      <button className="btn btn-primary mb-3" onClick={handleSpeak}>
+        Speak
+      </button>
+
+      {audioUrl && (
+        <div>
+          <label className="form-label">Playback:</label>
+          <audio className="w-100" controls src={audioUrl} />
+        </div>
+      )}
     </div>
   );
 }

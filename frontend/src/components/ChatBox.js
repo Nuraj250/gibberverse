@@ -12,10 +12,21 @@ export default function ChatBox() {
 
   return (
     <div>
-      <h2>Talk to Agent</h2>
-      <textarea value={prompt} onChange={(e) => setPrompt(e.target.value)} />
-      <button onClick={handleSubmit}>Send</button>
-      <p><strong>Response:</strong> {response}</p>
+      <div className="mb-3">
+        <textarea
+          className="form-control"
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+          rows="3"
+          placeholder="Ask me something..."
+        />
+      </div>
+      <button className="btn btn-primary mb-3" onClick={handleSubmit}>Send</button>
+      {response && (
+        <div className="alert alert-success">
+          <strong>Response:</strong> {response}
+        </div>
+      )}
     </div>
   );
 }
